@@ -1,6 +1,6 @@
 {
   "name": "@guihakka2/whohasaccess",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Read-only audit of who and what can access your GitHub repos: outside collaborators, deploy keys, webhooks, 2FA.",
   "type": "module",
   "bin": {

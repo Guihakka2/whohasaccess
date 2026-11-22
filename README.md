@@ -59,6 +59,12 @@ Other clients (VS Code, Cursor, Claude Desktop…) take the same command in thei
 
 The tool (`whohasaccess_audit`) is read-only (GET requests only) and uses the same token as the CLI, which is never returned. Logins, key titles and webhook hosts come from GitHub, so results are labeled as data for the agent, not instructions.
 
+## Download (no Node.js needed)
+
+Don't have Node.js? Each [release](https://github.com/Guihakka2/whohasaccess/releases/latest) has a standalone program for Windows (x64, ARM), macOS (Apple silicon, Intel) and Linux (x64, ARM). Download the file for your system, unzip it and run `whohasaccess` from a terminal, with the same options as above.
+
+The programs are built by GitHub Actions from this repository's code, with a `SHA256SUMS.txt` and a [build provenance attestation](https://docs.github.com/actions/security-for-github-actions/using-artifact-attestations) (`gh attestation verify <file> -R Guihakka2/whohasaccess`). They are not code-signed with a paid certificate yet, so the first run shows a warning: on Windows, SmartScreen → "More info" → "Run anyway"; on macOS, run `xattr -d com.apple.quarantine whohasaccess` once.
+
 ## Options
 
 | Option | |

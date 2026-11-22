@@ -22,3 +22,5 @@ claude mcp add whohasaccess -- npx -y @guihakka2/whohasaccess --mcp
 ```
 
 Usa o login do GitHub CLI (`gh auth login`) ou `GH_TOKEN`. **Só leitura** (apenas requisições GET), e o token nunca é mostrado. Opções: `--org`, `--all`, `--fail-on`, `--stale`, `--json`. Segurança: [SECURITY.md](SECURITY.md).
+
+**Sem Node.js?** Cada [release](https://github.com/Guihakka2/whohasaccess/releases/latest) tem um programa pronto para Windows, macOS e Linux (x64 e ARM): baixe, descompacte e rode `whohasaccess` no terminal. Gerado pelo GitHub Actions, com `SHA256SUMS.txt` e atestado de procedência. Ainda sem assinatura paga: na primeira vez, o Windows mostra o SmartScreen ("Mais informações" → "Executar assim mesmo") e no macOS rode `xattr -d com.apple.quarantine whohasaccess` uma vez.

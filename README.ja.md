@@ -22,3 +22,5 @@ claude mcp add whohasaccess -- npx -y @guihakka2/whohasaccess --mcp
 ```
 
 GitHub CLI のログイン（`gh auth login`）または `GH_TOKEN` を使用。**読み取り専用**（GET リクエストのみ）で、トークンは表示しません。オプション：`--org`、`--all`、`--fail-on`、`--stale`、`--json`。セキュリティは [SECURITY.md](SECURITY.md) を参照。
+
+**Node.js がなくても使えます：** 各[リリース](https://github.com/Guihakka2/whohasaccess/releases/latest)に Windows・macOS・Linux（x64 / ARM）用のプログラムがあります。ダウンロードして展開し、ターミナルで `whohasaccess` を実行してください。GitHub Actions でビルドされ、`SHA256SUMS.txt` とビルド来歴の証明付き。まだ有料の署名はないため、初回は Windows の SmartScreen（「詳細情報」→「実行」）、macOS では `xattr -d com.apple.quarantine whohasaccess` を一度実行してください。

@@ -20,3 +20,7 @@ A token with only read scopes is enough. With a fine-grained token, give read ac
 ## MCP mode
 
 `--mcp` (for AI agents) is read-only (GET requests only), validates every argument before any request, runs the CLI without a shell, never returns the token, and labels GitHub-provided names as data so an agent does not treat them as instructions.
+
+## Standalone executables
+
+Release executables are built only by GitHub Actions (`binaries.yml`) from the tagged source with the official Node.js single executable application feature, smoke-tested, and published with a SHA256SUMS.txt and a build provenance attestation (`gh attestation verify <file> -R Guihakka2/whohasaccess`). They are not code-signed with a paid certificate yet.
