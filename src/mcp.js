@@ -28,7 +28,8 @@ function checkSchema(schema, a) {
 // Runs the CLI and returns its parsed --json output. okCodes: exit codes that still mean "a result".
 export function runCli(bin, argv, { input, okCodes = [0, 1], timeout = 120000 } = {}) {
   return new Promise((done) => {
-    const p = spawn(process.execPath, [bin, ...argv], { cwd: process.cwd(), env: { ...process.env, NO_COLOR: '1' }, windowsHide: true });
+    // In a standalone executable (process.argv[1] is the executable itself) there is no script path to pass.
+    const p = spawn(process.execPath, [...(process.argv[1] === process.execPath ? [] : [bin]), ...argv], { cwd: process.cwd(), env: { ...process.env, NO_COLOR: '1' }, windowsHide: true });
     let out = '', err = '';
     p.stdout.on('data', (d) => { if (out.length < 10e6) out += d; });
     p.stderr.on('data', (d) => { if (err.length < 1e5) err += d; });
