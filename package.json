@@ -1,0 +1,35 @@
+{
+  "name": "@guihakka2/whohasaccess",
+  "version": "0.1.0",
+  "description": "Read-only audit of who and what can access your GitHub repos: outside collaborators, deploy keys, webhooks, 2FA.",
+  "type": "module",
+  "bin": {
+    "whohasaccess": "bin/whohasaccess.js"
+  },
+  "exports": "./src/index.js",
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "github",
+    "security",
+    "audit",
+    "access",
+    "deploy-keys",
+    "webhooks",
+    "collaborators",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guihakka2/whohasaccess.git"
+  },
+  "license": "MIT"
+}
