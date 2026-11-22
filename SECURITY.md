@@ -16,3 +16,7 @@ You will get a reply within 7 days.
 - No telemetry, zero runtime dependencies. npm releases are built by GitHub Actions with provenance; never by hand.
 
 A token with only read scopes is enough. With a fine-grained token, give read access to "Administration", "Webhooks" and "Metadata"; for orgs, "Members" and "Organization administration" (read). Anything it can't read is listed under "Not checked".
+
+## MCP mode
+
+`--mcp` (for AI agents) is read-only (GET requests only), validates every argument before any request, runs the CLI without a shell, never returns the token, and labels GitHub-provided names as data so an agent does not treat them as instructions.

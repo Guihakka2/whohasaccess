@@ -15,4 +15,10 @@ npx @guihakka2/whohasaccess --org minha-empresa
 - **Webhooks**: sem https, com a checagem de TLS desligada, falhando ou inativos (só o host da URL aparece, porque o caminho costuma ter segredos).
 - **Organizações**: membros sem 2FA, donos da org, GitHub Apps com escrita em todos os repositórios.
 
+**Com agentes de IA (MCP):** `whohasaccess --mcp` roda a auditoria como servidor [MCP](https://modelcontextprotocol.io): pergunte ao agente "quem ainda tem acesso aos meus repositórios?". Só leitura (apenas GET), o token nunca é devolvido, e os resultados vêm marcados como dados, não instruções.
+
+```bash
+claude mcp add whohasaccess -- npx -y @guihakka2/whohasaccess --mcp
+```
+
 Usa o login do GitHub CLI (`gh auth login`) ou `GH_TOKEN`. **Só leitura** (apenas requisições GET), e o token nunca é mostrado. Opções: `--org`, `--all`, `--fail-on`, `--stale`, `--json`. Segurança: [SECURITY.md](SECURITY.md).

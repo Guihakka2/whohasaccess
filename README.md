@@ -40,6 +40,25 @@ It uses your existing GitHub CLI login (`gh auth login`), or `GH_TOKEN` / `GITHU
 | Org members (`--org`) | 2FA disabled | | org owners |
 | GitHub Apps (`--org`) | | write access to all repos | others |
 
+## Use with AI agents (MCP)
+
+`whohasaccess --mcp` runs the audit as an [MCP](https://modelcontextprotocol.io) server, so you can ask a coding agent "who still has access to my repos?" and get the findings with their severity.
+
+```bash
+# Claude Code
+claude mcp add whohasaccess -- npx -y @guihakka2/whohasaccess --mcp
+# Codex
+codex mcp add whohasaccess -- npx -y @guihakka2/whohasaccess --mcp
+```
+
+Other clients (VS Code, Cursor, Claude Desktop…) take the same command in their MCP config:
+
+```json
+{ "mcpServers": { "whohasaccess": { "command": "npx", "args": ["-y", "@guihakka2/whohasaccess", "--mcp"] } } }
+```
+
+The tool (`whohasaccess_audit`) is read-only (GET requests only) and uses the same token as the CLI, which is never returned. Logins, key titles and webhook hosts come from GitHub, so results are labeled as data for the agent, not instructions.
+
 ## Options
 
 | Option | |
